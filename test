@@ -1,235 +1,207 @@
-100% decision/Branch coverage guarantees 100% statement coverage but not vise versa
-retrospective means lesson learn from past 
-
-Principal of Testing
-================
-1.Testing shows Presence of defects: Not assure you can find all possible defects in systems.no defect free product
-2.Exaustive Testing is impossible:testing is not possible with all the possible data
-3.Early Testing: Early Tesitng/Static Testing save time and money: Requirement,Desing and Code find defects as possible cause less cost.
-4.Defect Clustering: Tester does not influence the outcome of previous module.Testing are indepedent on different modules
-5.Tests Wears Out/Pesticide Paradox: same test repeated over a time with no longer help to find new defects so Testcases need to be regularly reviewed and revisit. 
-6.Testing is context depedend:Two different software are tested with may be different Stratergy and approach
-7.Absence of defect Fallacy:Meeting requiremet is equally important.finding defect and fixing doest not meet the user need and expectations.
-
-Test Activities/Process(involve Stakeholdes/Teammember/Busineess domain/Technical factors/Project constraints/Organisazations factor/SDLC/Tools/Regulatory Requirements)
-================
-1.Test Planning: Defining the Test Objective and selecing the approach to achieve required goals-Tool, Resouces Entry and exit.
-2.Monitoring and control: through out lifecycle, keep eye on going process, deviating obeserved by matricx and control acting will be taken
-3.Test Analysis/what to test: Idetify the testable features and Define and priotize assocaite test conditions together with related risk and risk levels. Idenfy defects are related to contradictions,Imissions,Incosistency and ambiguities requirements.
-4.Test Design/how to test : Writing Test Cases and other Testware, Identification of Coverage items, Guide to specife Testcase inputs
-* Test data requirement
-*designing the test env
-*identifying any other required infrastrucutre and tools
-5.Test Impementing: Ready for execution(Sequence of actions to be performed to run a test)
-*creating or acquiring the testware necessary for execution eg test data
-*manual and automate test scripts are created
-*Test procedures are assembled into Testsuites and pritotized and arranged with in Test Execution
-6.Test Excution: Running the Testcase
-*Actual test result are compared with expected result
-*Result are logged
-7Test Completion summary report prepared by managers: It occur at project milestones eg end of iteration
-*writing completion report and stoptesting and reporting to stakeholders
-*writing report documenting defect with are open
-*archive and store them and handover to appropriate maintainance team.
-
-
-Testware(Documentaion Output of Test Activites) and TestRoles
-===================
-Testplanning : TestPlan include Entry and exit creteria documents, Test Schedule, Risk analysis outcome 
-Test Monitoring and control : Tets Progress Report, risk informationa and control directives
-Test Analysis: Test Conditions acceptance creterai and defect reports in the test basis
-Test Design:Test Cases,Test Charters, Coveratge items, Test data reqirements and Test Env Requirement
-TestImplementation: Test Procedure, automated test scripts,Test suits ,Test data, test execution schedule and test env elements eg drivers
-Test Execution : Test logs and defect reports
-Test Completion: document lession learned,Product backlog items or change request
-Traceability: verify requirement are covered by testcase and can evaluate the level of residual risk
-Test Manager Role: overall resposibilty of test Process, Test Team, Test Pkanning monitoring and control and Test completion
-Tester: Test analysis,desing, testing and exection
-
-Busineess Requirmet- Acceptance Testing Team Participate
-System Requirement- System Testing Team Participate
-Architecture Design or High Level Desing: Intergration Team Participate
-Detailed Desing low level desing: Developement Team Participate
-
-Shift left statergy or as soon as the  first draft is prepared tester is requested to participate and raise concert and refer as static testing.
-TDD:Unit Test are Techically written first then code to satisfy the test and then test and code are refactored
-ATDD:Derived test from acceptance criteria Test not technically written but helpfull in UAT. Test are written before the part of application is developed to stafiy the test
-BDD:Derived test from requirements or behaviour Test are written from natural language which are easy to understand by stakeholders -Given/And/When/Then and directly translate to executable test
-Devops: create synergy means “to work together” or “to collaborate.” Testing and operation work together to achive set of common goals supports Team autonomy,fast feedback, intergrated tool chanins,CI&CD.
-
-benifits of devops: 
+Agile Manifesto
+==========
+1.Individuals and interactions over processes and tools: These are people oriented. People build software through its communication and interactions.
+2.Working software over comprehensive documentation: from a customer perspective working software is much more useful than over detailed document. 
+3.Customer collaboration over contract negotiation: collaboration directly with the customer improves the likelihood of understanding exactly what the customer is required.
+4.Responding to change over following a plan: change is inevitable (important)in software projects. Some factors like in which business operate, competitor activity, technology advances must be accommodated by the development process. Having flexibility in work is more important than simple adhering rigid to a plan.
+12 Principal of Agile
 ===============
-1.encourage developers to submit high quality code by component test and static anylysis
-2.fast feedback on code quality
-3.Automation delivy through pipeline reduces the need for repetivie manua testing 
-4. risk of regression is minimized due to scale and range of automated regression test
-Disadvanatage
-===============
-pipeline must be defined and established, CI CD tools must be introduced and maintained,Automation require addition resources
-
-Shift left approach
-==================
-1.Reviewing the Specifications from testing prospective to find defects such as ambiguities,incompleteness and inconsistencies
-2.writing test before code and have a code run in a test harness(a collection of software and test data used by developers to unit test software models during development.) during code implementation
-3.Using CI CD feedback fastere and automated component test accompany source code when submitted to repo
-4.Completing static analysis on source code prior to dynamic testing as part of automated process.
-5.performing non functional testing statrting at the component test level.this is form of shift left approvah as these non fucntional testing types are performed later in SDLC when complete system and representative test environment are available.
-6.Shift left approach result in extra cost traning and efforts in earlier in process but expected to save efforts and cost in later process. it important for 
-stakeholders are convinced and bought into this concept.
-7.Retrospective is a meeting held between team members and stake holders hapening on weekly/end of project/release/iteration like scrum master bring out way of how things could done better or could be improve, how to prevent and recommendation, Process Improvement as a result should be recorded and normally part of test completion report and to refer in future release.
-
-Test Level and Types
-=======================
-Every Test level must have a unique objective specific to that level.test activities can be performed at every test level or model
-component/unit/program/class/code/structure/module testing first level: can be small part of application,a page,a functinality or a module. 
-*it requires specifir support like test harness or unit test framework. 
-*it performs by developer in their dev env and will be performed as white box testing approach.
-*component integration and integration between two modules or with in module like city dropdown depend on state dropdown. component integration testing depend on integration statergy like botton down,top down and big bang approaches.
-*system integration: two sytems itegration are perfomed by independent test team and might be require to address incomplete requirement and product risk
-for eg amazon payment gateway itegrate with amazon application. it can be functional and non functional
-*Acceptance testing: UAT done by customer to do acceptance testing/acknowledege the project before accepting the final product to ensure all the requirement are implemented 
-Type of acceptance testing
-UAT: functional level testing,Operation acceptance testing:ensure software installtion and operations and functionally work and contractual and regulatory acceptance testing : rules and regulations are meet like bikes, car  having rules non functional
-Type of two sub levels of acceptance testing
-Alpa: tested by coustomer obejective is to accept the product condocted in pre prod env and beta: conduct in real env done by Real users object is feedback from real users
-* functional Testing/Unit Testing/Integration Testing/System Testing/Acceptance Testing the core features and Non functional Testing Performance stress load,usablity reliablity, maintainebility etc Testing the quality characteristics.
-*white box/code/unit/system/structure/use backend testing done by developers bjective is to cover the underlying structure by the test to the acceptable level. and black box done on UI with no code and done by saperate testing team ,objective is checking system behavoiur against spec document 
-*Confirmation/Restesting: when bug got fixed and Regression Testing only conduct when new changes are coming.
-*Maintainance Testing: enhacement/improvement in existing application already in production/fixing known bug/new features may be user feedback. Impact analysis is tecnical study which help you understand that which area of application is impact for this change so that reduce of effort on amount of regression changes.scope of maitainace testing depends on
-*degree of risk of the change
-*size of existing system,
-*size of change
-
-Static Testing
-=================
-Static testing does not need to execute code, reviw on process specification, system architecture specification etc. if tes done manual ten call reviw if its done through tool then called static analysis. objective is detecting defects and accessing charactertics like readability, completeness, corectness etc.static analysis is incorporate with CI tools to detect code defects like spelling checkers define variable not use or variable no decleared
-
-Activities of review 
-=================
-Planning, Review Initiation, individual review,communication and analysis and fixing and reporting.
-Roles and resposibities
-=======================
-Manager:Decide what to review
-Author: create and fix the product under review
-Moderator/Facilitator: Ensure effective running of review meeting including time management and safe review env where everyone can speak
-scribe/recorder:  record review comments 
-reviewer: a subject matter expert will review and someone working on project
-review leader: deciding who is involved and decide where review meeting takes place.
-
-Types of review 
-================
-Informal:do not reqire formal document between two testers in a team.
-walkthrough: is led by author creating doc generating new ideas motivating team etc
-technical review: done my moderator objectinve is to make technical decision but also detect anomalies evaluate quality and build confidence
-formal/inspection: in this all the complete generic meeting process will follow objective is to find the maximum number of anomalies evaluate quality,build confidence in product,metrics are collected and used to improve SDLC inspection can not be act as review leader or scribe.
-
-Ch-4 Expreiecnce based technique can be apply in following worse situations.
-1.Specification are poorly define can not apply black box technique.
-2.Time pressure
-3.Testing team is not formally trained for testing fundamentals.
-
-Error Guessing/fault attack :domain knowledge, past experience etc. high level test cases or no test cases
-===================
-Error Guessing based on
-1.how application has worked in past
-2.what type of mistake that developer tends to make
-3.failure that may have occur in application.
-
-Exploratory Testing: poor specification or not detailed Requiments are missing or not clear. Exploring the product reuiremnt
-===================
-Test are simultaneously designed, exceute and evalute while the tester learns about the test objects.
-This Testing is learn more about the test objects and to create test for untested areas.Test objective may be treated as high level test conditions.
-Tester do not write test results  Tester give training session. Tester may use test session sheet to document the steps followed
-
-Checklist Based Testing:A checklist is a questioneare put together to make a checklist which is used instead of test cases to test the system.
+1.High priority is to satisfy customers through early and continuous delivery of valuable software
+2.welcome change in requirements ever later in development.
+3.delivery working software frequently b/w few weeks or months
+4.businesspeople and developers must work together daily and throughout the project.
+5. Individuals are highly motivated. Give then evn and support they needed and trust to get the job done.
+6.conveying information to and within development team is face to face conversation.
+7.working software in the primary measure of progress.
+8.Agile process promote sustainable or constant development.
+9. continuous attention to technical excellence and good design enhance agility
+10 Simplicity -Art of maximizing the amount of work not done is essential breaking requirements in simple form
+11the best architecture, requirements and design emerge from self-organising teams
+12. At regular intervals the team reflects how to be more effective than adjust its behaviour.
+Whole Team Approaches
 =====================
-A Tester designs,implement and exeute test to cover test condition from a checklist
-Checklist should not contain items that cne be checked automatically,items better suited for entry and exist criterai or items that are two general.
-Checklist support various test type functional and non functional.care should be taken to avoid checklist become too long.c
-
-Coolaboration based test approch
-=============================
-coloaborate user story writing have three crital aspects called together 3C's
-*Card:the document describing the user story(Sticky notes, board)
-*Conversation:explain how the software will be used(can be documented or verbal)
-*Confirmation:the acceptance criteria.
-
-Acceptance criteria: User story consider as done when we met the acceptance criteria accepted by stake holders.
+*Involving everyone with the knowledge and skill necessary to project success.
+*Team Include representative from the customer and other business stakeholders who determine product features.
+*Team should be small minimum as 3 and maximum as 9
+*Whole team share same workplace and colocation for better communication and interactions.
+* Supports through daily standup meetings where work progress is communicated, and any impediments/difficulty of progress are highlighted.
+* It promotes more effective and efficient team dynamics.
+Benefits:  improve communication and collaboration within team* enabling various skills sets with in team to be leverages to the benefit of the project * making quality everyone’s responsibility. Testers support and collaborate with business representatives and help them to create suitable acceptance test working with developers to agrees on testing strategy and deciding the automation approach. They transfer and extend testing knowledge to other team and influence the development of the project.
+Early feedback: 
+*They are very short iterations so enable the project team to receive early feedback by using continuous integration.
+* By getting frequent feedback Agile Team can incorporate new changes in product development process.
+*Early feedback help team to focus on highest business value and associated risks.
+*Heps to manage team better as capability of team is transparent to everyone.
+*In sequential based model project customer does not see the product until the project is nearly complete. So, it difficult to address issues of customer by the development team
+Approaches of Agile: 
+=================
+Extreme Programming: 
+5values to guide development (communication, simplicity, feedback, courage and respect)
+Principals (Humanity, improvement, diversity, reflection, opportunity, failure, quality, baby steps and accepted responsibility.
+Primary Practice (sit together, whole team, informative workplace, pair programming, story, weekly cycle, continuous integration, test first programming and incremental design.
+Scrum:  Its agile management framework which follow below practices
+Sprint: Divide the project into iterations (2-4 weeks)
+Product increment: Each sprint result in potential releasable product. every cycle adds new items along with old items. 
+Product Backlog: The Product owner manages prioritized list of planned products items. The product backlog evolves from sprint to sprint called refinement
+Sprint backlog: the scrum team selects a set of highest priority called sprint backlog from the product backlog. Since the scrum team not the product owner selects the items to be realized with in the sprint, the selection is referred to as being on the pull principle rather than the push principle.
+Definition of done: Make sure there is a potentially releasable product at each sprint end. The scrum team defines appropriate criteria for sprint completion. The discussion depends on team understanding of the backlog items and the product requirements.
+Timeboxing: if the development team cannot finish the task with a sprint, then feature is removed from the sprint and task move back to backlog Timeboxing apply on task as well as other situations (e.g. enforcing meeting start and end time).
+Transparency: sprint status is updated daily called scrum meeting it includes test results, team visibility, management and all interested parties. For e.g. sprint status on a whiteboard.
+Roles
+Scrum master: ensure scrum practice and rules are implemented and resolves violation and resource issues. This is not a lead role but a coach
+Product Owner or BA: Gather requirements and represent customer, generates and maintain and prioritize product backlog. This is also not a team lead.
+Development Team: develop and test the product. There is no team lead, so team makes the decision. The team is also cross functional.
+Kanban: It is used to visualize and optimize the flow of work within the value-added chain.
+1.Kanban board: the value chain managed is visualized by kanban board. Each column shows a station. Which is a set of activities e.g. dev and testing. The items to be produced and task to be processed are symbolized by tickets move from left to right across the board.
+2.Work in Progress limit: the number of parallel activities is strictly limited this is control by maximum no of tickets allowed for station. Whenever a station has free capacity, the worker pulls a ticked from predecessor station.
+3.Lead Time: It’s used to optimize continuous flow of task by minimizing the average lead time for complete value stream.
+Collaborative user story creation
+==========================
+In agile development user stories are written to capture requirements from the prospective of developers, testers and business representatives as poor specifications are major reasons for project failure result in redundant and contradictory features and other miscommunications. In sequential shared vision of a feature are accomplished through formal reviews after requirement are written but in Agile shared vision of a feature are accomplished through informal reviews while requirements are being written.
+*User stories must include both functional and non-functional characteristics. Each story includes acceptance criteria for these.
+*Thise criteria should be defined in collaboration with developers’ testers and business representatives. They provide extent vision of a feature that business representatives will validate.
+*An agile team is considering a task finished when acceptance criteria have been satisfied.
+*Tester improves user stories by identifying missing details or non-functional requirements.
+* Tester can contribute by asking questions about user stories, proposing ways to testing the story and confirming the acceptance criteria. 
+The collaborative author of user story can use brainstorming and mind mapping. Tester may use INVEST technique means (Independent, Negotiable, valuable, estimable, small and testable).
+User story creation for 3c concept i.e. card (a physical media describing the user story e.g. stick notes on board), conversation (it explains how software will be user can be verbal or written. Testers have different point of view as dev and representatives bring valuable input opinion and thoughts) to determine the quality of product and confirmation (Acceptance Criteria, confirm that user story is done include positive and negative user story this can include developers as well as specialist focused on performance, security etc. to confirm story is done the define AC is tested and should be satisfied).
+Retrospective: It is meeting held at each iteration to discuss what was successful, what could be improved, how to incorporate the improvements and retain the success in future iteration. It covers Process, People, organisation relationships and tools.
+Continuous Integration: Delivery a product requires reliable, working and integrated software at every sprint so CI tools in needed by merging all changes made to the software at least once a day. configure management, compilation, build, development and testing are wrapped in single automated and repeatable process. Defect in the code is detect more quickly as integrate, build and test constantly.
+Release and Iteration Planning
+=====================
+In Release planning business representatives periodize the user story.
+Tester involves in release planning:1 Defining Testable user story include acceptance criteria 2. participate project and quality risk analysis 3. estimating test efforts associated with user story 4. define the necessary test levels 5. Planning the testing for the release.
+Iteration planning business representatives must answer questions about each story to understand.
+Tester involves in Iteration planning:1 Participate in detail risk analysis of user story 2. Determining testability 3. creating acceptance criteria of user story 4. break down user story in task 5. estimating testing efforts for all testing task 6. Identify functional and non-functional aspects of the system
+Work Products in Agile
+================
+Collection of sub-features in a single complex feature are known as epics. Epics may include user stories for different development team.
+Business Oriented: what is needed (requirement specification) and how to use (user documentation) include user story and Acceptance Criteria.
+Development Oriented: how the system is built (database relationship diagram), Actual Implementation of system(code) it also often creates unit test these tests created after development of code.
+Tester Oriented: how system is tested (Test Strategy and plans) and actual test the system (Manual and automated) as well as documents such as test plan, defect report and test results logs. Document are created in as lightweight a fashion as possible.
+Test Levels: In Agile Requirement specification, design specifications and development activities may overlap with test levels.
+In Agile if requirements changes are coming from client and Testing or prior requirement are in between then Testing, and development activities are overlap. In some Agile lifecycle, overlap occurs because change to requirement design and code can happen at any point in an iteration. During iteration user story can typically progress sequentially through the below activities
+Unit Testing: done by developer
+Feature Acceptance Criteria: Feature Verification Testing:  which is often automated and may be done by developers or testers and involves testing against the user story acceptance criteria. Feature Validation Testing:  which is manually and can involve developers, Testers and business representatives. Working collaboratively to determine whether the feature is fit for use and improve the visibility of progress made and receive feedback from business stakeholders. Done by testers.
+*Agile Projects often involve heavy use of automation tools to develop test and manage software development. Developers use tools for static analysis, unit testing and code coverage developers continuously check code and unit test into configuration management system. One goal of the automated test is to confirm that the build is functioning and installable. If it fails, then team should fix the defect in time for next code check in. It helps in reduce expensive and efficient cycle of build -install- fail-rebuild-reinstall that can occur in many traditional projects.
+Org Options for Independent testing
+Some Agile team’s developer creates many of the tests in the form of automated test.one or more testers are embedded within the team performing many testings’ task by giving those position within team there is a risk of loss of independent and objective evaluation.
+Other Agile like kanban and scrum Teams are fully independent separate test team and assign testers on demand during the final days of each sprint. This can preserve independence. However, time pressure, lack of understanding and relationship issue with stakeholders and developers are often led to problems with this approach.
+Third option is to separate independent team where tester is assigned to Agile for long term. It helps in gaining good understanding of the product and strong relationships with other team members. The Independent team can have specialized tester outside the Agile teams to work on long term and iteration independent activities. Such as developing automated test tools, carrying out non-functional tests, creating and supporting test env and data.
+Communicating test Status, progress and quality
+===========================
+Tester in the Agile team utilize various methods to record test progress and status, including test automation results by showing on Agile task board and burndown chart. Can be communicated to the rest of the team by wiki dashboard, dashboard style email and verbal during standups. The teams may use tools that are automatically generated reports based on result and progress. They use burndown charts across entire release and every iteration. 
+*A burndown chart represents the amount of work left to be done against time allocated to release or iteration.
+*Task board is used provide instant detailed visual representation include the whole team current status and status of meeting (Story cards, development task, testing task are created during planning and captured on board). Cards can be moved as Todo, WIP, verify and done. Team may use Automation tool to a maintain story card and agile task board, which can automate dashboard and status updates. Testing task on the task board related to the acceptance criteria defined for the user stories.
+Managing regression
+===========
+Since responding to change is a key principle of agile and changes can also made to delivered features.so in order to maintain velocity it’s critical that team invest in test automation in all levels as early as possible. It is also critical that all test assets such as manual test automation test, test data and other testing artefacts are kept up to date with each iteration. Code chums are increate with each iteration line to code added modified and delete from one version to another. Scope of testing is also increase in Iterations
+Use of test automation at all the levels allow teams to provide rapid feedback on product quality.
+Automated unit test is run before source code is checked into the mainline of configuration system to ensure the code changes do not break the software build.
+Automated Acceptance test is running regularly as a part of CI full system build. While review the testcase tester should consider suitably for automation, Teams need to automate as much as possible for previous and current iteration. This helps in reduce regression risk and less efforts than manual running regression. Retire test case that are no longer relevant. Testers must select testcase that are candidate for regression test suits.
+In addition to test automation following testing task may also be automated (Test Data Generation, import data from different source, deployment of builds into env, restoring the test env e.g. database or website data files), comprising the data output.)
+Tester skills in Agile
+===============
+A Tester in Agile team should be competent in test automation, test driven development, Acceptance Test Driven Development, white box, black box and experience-based testing. Agile depends heavily on collaboration, communication and interaction between team members. Testers Be positive and solution oriented, actively acquire info from stakeholders rather than rely entirely on specifications, accurately evaluate report results, test progress and product quality, work effectively to define testable user stories especially acceptance criteria, respond to change quickly include adding changing and improving testcases, Plan and organize their own work.
+Role of Tester
+==========
+It Includes Activities that generate and provide feedback not only the test status, test progress and product quality but also the process quality. Understanding, Implementing and updating the test strategy, measuring and reporting test coverage, ensuring proper use of tools, configuring and managing test env and test data, report defects and working with team to resolve it, coaching other team members, ensure the appropriate testing task are scheduled during release and iteration planning, actively collaborate with dev and business teams to clarify requirements, participate in retrospective suggesting and implementing improvements.
+Some drawbacks are Tester work closely with developers may lose the appropriate tester mindset, Tester become silent and tolerant about inefficient ineffective or low-quality practices with in the team, Tester can not keep pace with the incoming changes in time constrained iterations they can be blamed for the delay.
+Agile Approaches
+==========
+TDD:  TDD is used to develop code guided by automated test cases. Tests are primary unit and code level through test can also be written the integration or system levels. Test cases are prepared prior to code the make test passed.
+ATDD: Acceptance Test Driven development defines the acceptance criteria and tests during the creation of user story. ATTD creates reusable test for regression testing. Allows quick resolution of defects and validation of feature behaviour. It determines whether acceptance criteria are met for the feature involves developer tester and BR.
+BDD: Testing code based on expected behaviour. Test are based on the exhibited behaviour of software. Easy to understand by team members and stakeholders. Its use to define acceptance criteria based on given, when, then format. From these requirements BDD framework generate code that can be used by developers to create test case. It’s used to define accurate unit test focuses on business needs.
+Test Pyramid: unit, integration, system and acceptance test are performed in test pyramid. large no of test case at lower and less test case at upper as development moves to upper. Unit and integration tests are automated and created using API based tools. At system and acceptance level tests are automated and created using GUI based tools.
+Tests Quadrants 1(Technology facing, unit level and supports the developer and include in continuous integration process. And component testing)
+Tests Quadrants 2(system level Business confirm system behaviour) contains functional test e.g. story tests, user experience protype. Check Acceptance criteria can be manual and automated functional and API testing.
+Tests Quadrants 3(system and user acceptance level Business facing) contains exploratory testing process flow usability testing user acceptance Testing.
+Tests Quadrants 4(system or operation acceptance level Technology) performance, scalability load security and maintainability
+Role of tester in scrum team
+=============
+Agile emphasis the whole team approach dev, tester and business representatives.
+Cross functional: Each member brings different set of skill to team. Team works together on test strategy, Test planning test specification test execution and test evaluation and result reporting.
+Self-organising: the team many consist only dev but ideally there would be 1 or more testers.
+Co-located: Tester sits together with dev and product owner.
+Collaborative: Tester collaborates with team members other team stake holder product owner and scrum master.
+Empowered: Technical decisions regarding design and testing are made as whole team.
+Committed: A tester committed to question and evaluate product behaviour and characteristics with respect to expectations
+Transparent: dev and testing process are visible to agile task board.
+Credible: the tester must ensure the credibility of strategy of testing, its implementation and execution otherwise stakeholders will not trust on the result
+Open to feedback: Retrospective allow teams to learn from success and from failure.
+Resilient: Testing must be able to respond to change.
+Sprint 0 is the first iteration of the project many preparation activities take place
+Identify scope of project, create initial system architecture high level prototypes, plan acquire and install tools, create a initial test strategy include test scope, technical risk, coverage goals, perform initial quality risk analysis, define test metrics to measure the test process, progress and quality, specify the definition of done, create a task board, define when to continue and stop testing. Sprint 0 sets the direction for what and how testing need to achieve.
+Test Planning: Testing is fully integrated in agile, so test planning should be start during the release planning session and be updated during each sprint, test planning for the release and each sprint should address the issue discussed, sprint planning result in a set of tasks to put on task board. Where each task should length of one or two days of work.
+Accessing quality risk
+===================
+Release planning: business representatives who know the feature provide a high-level overview of risk. Whole team may assist in the risk identification and assessment.
+Iteration Planning: the whole team identifies and accesses the quality risks.
+Functional risk: incorrect calculation in report. Non-functional risk slow response to user output risk related to efficiency and response time. Non-functional difficulty in understanding screens and fields risk related to usability and understandability.
+How quality risk analysis in agile during iteration planning
+==============================================
+Geather agile team members together, list all the backlog items for the current iteration, identify the quality risk associated with each item, access each identified risk which include two activities: categorize the risk and determining its level of risk based on impact and likelihood of defects, determine the extent of testing proportional to the level of risk. Select appropriate test techniques to mitigate each risk.
+Estimating testing efforts techniques
 ======================
-Acceptance criteria can be used to 
-define e the scope of story
-Reach consensum among the stakeholders
-describe both positive and negative scenarios
-serve as a basis for the user story acceptance testing
-allow accurate planning and estimation
-two types of acceptance criteria: most of the acceptance creteria are document is these formatsh
-=================================
-Scenario oriented: eg given/when/then used in BDD
-Rule oriented: bullet points verificaiton list/table form or input/output mapping.
+Planning poker: A commonly used in Agile. A consensus-based technique. Each estimator has a deck of cards with values like Fibonacci series (0,1,2,3,5,8,13, 21…). The value represents the story points, effort days and other units in which the team estimates. This is recommended as the number in the sequence reflects that uncertainty grows proportionally with size of story. A high estimate usually means the story is not well understood and should be broken down into multiple smaller stories. Priority is specified by the product owner before planning poker sessions is initiated. When feature is fully discussed each estimator privately select one card to represent his or her estimate. If all estimators select same value, then become the estimate. If not, then discuss the difference and poker round is repeated until agreement is reached either by consensus or by applying rules e.g. use the median or use the highest score to limit the no. of poker rounds. Improves collective knowledge what must be done.
+Acceptance Criteria should address the following topics
+==========================================
+functional behaviour, Quality characteristics, Scenarios (Use Case): Sequence of action b/w external actor and system to accomplish goals, Business Rules, External Interfaces (Descp of connection b/w system and outside world), constrains, Data Definition: customer may describe the format, data type, allowed values, Default values. 
+Definition of done for unit testing
+=========================
+100% decision coverage where possible, with careful reviews of any infeasible path, static analysis performs on all code, no unresolved major defects, no known unacceptable technical debt remaining in design and code, all code unit test and unit test result reviewed, all unit tests are automated, imp characteristics are within agreed limit like performance.
+Definition of done for Integration testing
+===============================
+All functional requirements tested using both functional and non-functional requirements, all interface b/w unit tested, all quality risk covered, no. unresolved major defects, all defects found are reported, all regression tests are automated where possible.
 
-Acceptance Test Driven Developement: ATDD: Test are written first before development
-===================================
-Test cases are written prior to implementing the user story.test cases are created by team members with different propective eg customers,developers and testers.
-Test may execute manually and automatically first step,
-is specification workshop where user story(not yet defined) its acceptane criteria are anaylzed ,discussed and written by the team members incompleteness or defects in user story are resolved in this porcess.
-Second step: create Test cases done by testers individually test cases are based on the acceptance criteria and can be seen as expample how software work. this will help the team to implement user story correctly.during the test design test techniques may apply.
-ATDD follow below testcase approch
-1.the First Test case are positive then team should perform negative test finally team should cover not functional test like efficency and usability. testcase should be expressed in way that should understand by stakeholders.
-2.Test case covers all the characterstics of user story not beyond the story.it may contains the details of issue decribed in user story.
-3.No two test case describe same characterstics of user story. the developers can autoamte the test case by writting the support code as they implement the feature describe by the user story. the acceptance test then become exeuctable requiments.
-
-chapter 5 : Test Plan document- Responsibility of Test Manager
-==============================
-A Test plan describe the objectives,resources and process for a test project
-1 It documents the means and schedule for achivieng the test objectives.
-2.ensure that test will meet the established creteria
-3.serve as mean of communication with team members and other stakeholders.
-
-Test Plan should Include
-========================
-1.Context of testing(Scope,Test obejctive, test basis)
-2.Assumption and constraints of test project
-3.stakeholders(eg roles and resposibility, hiring and training need)
-4.communication(forms and frequency of communication)
-5.Risk Register(project and product risk)
-6.Test Approch (Test Level, Test types, test techniques, entry and exit creteria,data requirement, test env requirement, deviations from organisation test policy and test stattery)
-7.Bugdet and schedule(Running out of time is effect in project timeliness)
-
-Release planning and sprint/iteration called as Agile methology
-
-Release planning : looks a head to release of  product,define and redefine the product backlog and may break large user story in to small.it serve as bais of test approch and test plan. tester involves to write testable user stories and acceptance criteria, particiapte in project and quality risk analysis,estimate test efforts
-,determine test approach and plan testing for release.
-
-Sprint/iteration planning : looks a head for single iteration and with iteration backlog
-Tester involve to breakdown user stores in to testing task,estimate test efforts for all testing tasks, identity and refine functional and non functional aspects of the test objects,determine the testablity of user stories.
-
-Entry and Exit Criteria activities should have perform before to start and before to stop testing
-========================
-Entry Criteria/Definition of Ready include
-=====================
-availablity of resources(people,tools,env,testdata,budget and time)
-availablity of testware(testbasis, testable env, userstories and testcases)
-initial quality level of test object(all smoke tests have passed)
-
-Exit Criteria/Definition of Done include
-=====================
-measuring of throughness(level of coverage, number of unresolved defects, defect desity, no of failed testcases)
-complettion criteria(plan test have been excuted)
-static testing have been performed
-all defects found are reported
-all regression tests are automated
-
-Test Estimation Techniques decided by the test manager
+Definition of done for System testing
 =============================
-Test effort estimation involve predicting the amount of test related work to meet the objective of test objects estimation of small teask is more accurate than large task. decompose into set of smaller task and then turn can be estimated
-
-Test Estimation Techniques two types 
+E2E Test of user story, features and functions, all user persona covered, quality characteristics of system covered (performance, reliability and robustness), Testing done in prod env include all hardware and software for all support configurations, all quality risk covered, all regression tests are automated, all defects are reported and fixed, no unsolved major defects (acc. to risk and importance). 
+Definition of done for user story
+=============================
+User story selected for iteration are completely understood by team and have detailed testable acceptance c, all elements in story are specified and reviewed including user story acceptance test have been completed, Task necessary to implement and test the selected story have been identified and estimated by the team.
+Definition of done for Feature which span multiple user story or epic
+=============================
+All constituent stories with acceptance criteria are defined and approved by customer, the design is complete with not technical debt, code is complete with no technical debt or unfinished , unit test have been performed and achieve defined level of coverage, Integration and system test for the feature are performed to define coverage criteria, no major defects remain to be corrected, feature documentation is complete which include release notes user manual and online help functions.
+Definition of done for Iteration
+=====================
+All feature for the iteration is ready and individually tested according to the feature level criteria, all non-critical defect cannot fixed and added to the product backlog and prioritized, Integration of all features for the iteration completed and tested, Documentation written reviewed and approved.
+Definition of done for Release: Coverage, quality, time and cost
+======================
+Coverage: All contents of release have been covered by testing. It is determined by what is new or changed, complexity and size and associated risk of failure.
+Quality: The defect intensity, the defect density, estimated no of remaining defect within acceptable limit. The consequences of unresolved defects and level of risk associated are understood and acceptable.
+Time: if the pre-determined delivery date has been reached, the business consideration with releasing and not releasing need to be considered.
+Cost: the lifecycle cost should be calculating the return on investment for the delivered system. The main part of the lifecycle cost comes from the maintenance after the product has been released due to no of defects escaping to prod.
+ATDD Is a test first approach
+=======================
+The first step is specification where story is analysed, discussed and written by develop, Tester and BR. any incomplete are fixed during this process. 2. Next Step is to create test can be done by team or a tester individually. BR validate tests. Typically, first step is positive test should be passing then negative test coving non-functional attribute as well. Test are developed before user story is implemented. i.e. user story just listed.
+Functional and nonfunctional black box test design
+========================================
+Just as developers programming based on user story and acceptance criteria, so tester creating tests based on user story and their acceptance criteria. Testers can apply traditional Blackbox testing tech such as equivalence, boundary, decision table and stat transaction to create test case. In many situations nonfunctional requirements can be document as user stories. Black box tech such as boundary values can also be used for non-functional quality characteristics. The user story might contain performance or reliability requirements.eg a given execution or no. of operations can not exceed a time limit.
+Exploratory Testing: A test charter is document describe approach of executing exploratory testing
+============================================================================
+To achieve the best result, exploratory testing should be combined with other experience-based tech as part of reactive testing strategy. Such as risk-based testing, analytical requirement-based testing, model-based testing and regression-averse testing. Test design and execution occur at same time, guided by test charter. A test charter provides the test condition to covered during a time boxed testing session. During exploratory testing the result of the recent test are guide the next test. The same white and black box testing can be used to design test as when preforming predesigned testing. A charter may include (Actor: Intended user of system/Tester, Purpose, Setup, Priority, Reference, Data, activities, Oracle Notes: how you experience while interacting with project, Variations: Alternate actions and evaluations). A session-based test management can be used to manage exploratory testing. 60-120 minutes session time for exploratory testing include (survey session, analyse session and deep coverage). The quality of test depends on tester ability to ask questions (what is most imp, what way system fail, what happen if, are customer expectation fulfilled, is system possible to install or remove in all supported upgrade paths). It is important to document the process as much as possible. Following list useful to document (Test Coverage, Evolution notes, Risk/Strategy list, Issues question and anomalies, Actual behaviour)
+Agile team use physical story/task board e.g. JIRA
 ================================
-1. Metrics based estimation
-a.)Estimation based of ration: its metrics base technique and estimation based on ratio-taking an existing project as refrence and ration use their to estimate new  eg if the previous project development to test ratio was 3.2 and cuurent project dev efforts are 600 person-days the test estimated to be 400 person-day
-b.)Project Extrapolation: its metrics base technique are made early as possible in the current project to gether data this method is very suitalbe for iterative SDLC eg the team may extrapolete the test efforts in the forthcoming iteration as the averagred effort for the last three iterations).
-2.Expert Base estimation(wide band delphi and three point estimation)
-a.)wide band delphi/planning poker: Expert based techinique each expert is isolated and estimates the efforts. estiame are usually make using cards wiht number that represent the effort size.
-b. Three point estimation: in this Expert based techinique three estimation are made by experts i.e the most optimistic, the most likely and the most pessimistic 
-E= (a+4-m)+b/6 eg if estimate in person hour  a=6 m=9 and b=18 then E = 6+4*9+18/6 =10 so final estimate 10+-2
-
+Record story and their relevant dev and test task, capture team members estimate which automatically calculate the effort required for the story, Associate dev and test task with same story, provide visual representation matrices, chart and dashboards, Integration with configure management tools which allow automated recording of code check ins and build against task in some cases automated status updated for tasks.
+Communication and Information sharing tool
+==============================
+In addition to email and document Agile often use three types of tools wikis, instant messaging and desktop sharing.
+Wikis allow teams to share online knowledge (Product feature diagram, Feature discussion, photos of whiteboard discussion).Metrics, chars and dashboards on product status is used when wiki integrated other tools such as build server and task management system as tool update product status automatically. conversation b/w team members like email and instant messaging but in the way that shared with everyone in team.
+Software Build and distribution tool: CI tools 
+=====================================
+In addition to run unit and integration test these tools run addition of static and dynamic tests. Build tools can be linked to automatic deployment tools. Which can fetch the appropriate build form the CI or Build server and deploy into one or more env such as dev, test stagging and prod. This reduces errors and delays associated with relying on specialized staff.
+Configure Management tool: Version control
+=======================
+Configuration management tools not only to store source code and automated tests. But manual test and test work product also store. This provide traceability b/w which version is test and without loosing historical information. The main types of version control system are centralized source control systems and distributed version control systems. Team size, structure, location and requirements will determine which version control system is right for project.
+Test Design Implementation and Execution tool
+===================================
+Test Design tools: use of tool such as mind maps have become more popular to quicky design test for a new feature.
+Test case management tool: it may be part of whole team application lifecycle management and task management tool.
+Test data preparation and Generation tool: it beneficial when lot of data and combinations are necessary to test application. This allows quick updating of test data as change occur.
+Test Data load tools: Manual data entry is time consumed but data load tools are reliable and efficient.
+Automation test execution tools: Tools are used to support test first approach. These tools allow tester to express the expected system behaviour in tables or natural language using keywords.
+Exploratory test tools:  capture and log activities performed during exploratory test session. This is useful when defect is found as the action taken before the failure occurred have been captured.
+Cloud Computing and virtualization tools
+===========================
+Virtualization allows a single physical resource(server) to operate as many separate, smaller resources. Teams have a greater no of servers available to them for dev and testing. This can help to avoid delay with waiting for physical server. some test management tools now utilize virtualization tech to snapshot server at the point when fault is detected allow tester to share to dev for investigation.
